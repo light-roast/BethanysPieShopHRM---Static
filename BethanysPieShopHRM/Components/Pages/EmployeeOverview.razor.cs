@@ -1,4 +1,5 @@
-﻿using BethanysPieShopHRM.Shared.Domain;
+﻿using BethanysPieShopHRM.Services;
+using BethanysPieShopHRM.Shared.Domain;
 
 namespace BethanysPieShopHRM.Components.Pages
 {
@@ -6,9 +7,9 @@ namespace BethanysPieShopHRM.Components.Pages
 	{
 		public List<Employee>? Employees { get; set; } = default!;
 
-		protected override void OnInitialized()
+		protected async override Task OnInitializedAsync()
 		{
-			Employees = Services.MockDataService.Employees;
+			Employees = MockDataService.Employees;
 		}
 	}
 }
